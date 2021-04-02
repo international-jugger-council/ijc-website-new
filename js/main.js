@@ -1,10 +1,11 @@
 const LANGS_SUPPORTED = [
+  'de',
   'en',
   'es',
-  'de',
 ];
 
 const LANGS_TRANSLATED = [
+  'de',
   'en',
   'es',
 ];
@@ -54,10 +55,14 @@ function setPageLang() {
     return;
   }
   if (!LANGS_TRANSLATED.includes(lang)) {
-    const $modalLangWarning = document.querySelector('#ijc_modal_lang_warning');
-    $modalLangWarning.classList.add('is-active');
+    openModalLangWarning();
   }
   setLang(lang);
+}
+
+function openModalLangWarning() {
+  const $modalLangWarning = document.querySelector('#ijc_modal_lang_warning');
+  $modalLangWarning.classList.add('is-active');
 }
 
 function closeModalLangWarning() {
