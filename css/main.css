@@ -136,7 +136,7 @@ nav {
 .hero-body h2 {
   color: white;
   font-family: "Clean Sports";
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 2.5rem;
 }
 
@@ -208,7 +208,7 @@ footer {
   padding: 0 2rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 769px) {
   .hero-body h2 {
     font-size: 3rem;
     line-height: 6rem;
