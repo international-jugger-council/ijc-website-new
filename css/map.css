@@ -18,3 +18,13 @@ html, body {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+#controls div {
+  margin: 5px;
+  padding: 2px;
+  background-color: whitesmoke;
+  border: 1px;
+  border-style: solid;
+  border-color: lightskyblue;
+  border-radius: 3px;
+}
