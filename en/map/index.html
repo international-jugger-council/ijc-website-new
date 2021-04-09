@@ -570,15 +570,21 @@
 
     <div id="map"></div>
 <div id="controls">
-  Show inactive clubs: <input type="checkbox" id="showInactive" onclick="setShowInactive()">
-  Show armoured clubs: <input type="checkbox" id="showArmored" onclick="setShowArmored()">
-  Show youth clubs: <input type="checkbox" id="showYouth" onclick="setShowYouth()">
-  Clubs visible: <span id="numMarkers">0</span>
+  <div>Show inactive clubs: <input type="checkbox" id="showInactive" onclick="setShowInactive()"> |||</div>
+  <div>Show armoured clubs: <input type="checkbox" id="showArmored" onclick="setShowArmored()"> |||</div>
+  <div>Show youth clubs: <input type="checkbox" id="showYouth" onclick="setShowYouth()"> |||</div>
+  <div>Show active, non-armored, adult clubs: <input type="checkbox" id="showNormal" onclick="setShowNormal()" checked> >>></div>
+  <div>Clubs visible: <span id="numMarkers">0</span></div>
+</div>
   <br/>
   <a href="https://docs.google.com/spreadsheets/d/1KHNrKrpunvWNaGVStFhj7Ra2EC_kgK8sZQsxa2yiJuk/edit#gid=0">Source data</a>
   <br/>
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSetnR7iT0yikzq435YvM-pKsh_nbZ-55egBEpu2qUu0TIaWOw/viewform">Propose an update</a>
+
+<div id="description">
+  The world.
 </div>
+
 <pre id="content" style="white-space: pre-wrap;"></pre>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtjfgtWoGNkp5Uc2XQ7kh3Po3wfXY-R4U&callback=listCentres"></script>
 

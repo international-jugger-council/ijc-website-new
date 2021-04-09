@@ -570,14 +570,19 @@
 
     <div id="map"></div>
 <div id="controls">
-  Inaktive Clubs anzeigen: <input type="checkbox" id="showInactive" onclick="setShowInactive()">
-  Gepanzerte Clubs anzeigen: <input type="checkbox" id="showArmored" onclick="setShowArmored()">
-  Kinder Clubs anzeigen: <input type="checkbox" id="showYouth" onclick="setShowYouth()">
-  Clubs sichtbar: <span id="numMarkers">0</span>
+  <div>Inaktive Clubs anzeigen: <input type="checkbox" id="showInactive" onclick="setShowInactive()"> |||</div>
+  <div>Gepanzerte Clubs anzeigen: <input type="checkbox" id="showArmored" onclick="setShowArmored()"> |||</div>
+  <div>Kinder Clubs anzeigen: <input type="checkbox" id="showYouth" onclick="setShowYouth()"> |||</div>
+  <div>Erwachsene, Nicht Gepanzerte, Aktive Clubs anzeigen: <input type="checkbox" id="showNormal" onclick="setShowNormal()" checked> >>></div>
+  <div>Clubs sichtbar: <span id="numMarkers">0</span></div>
+</div>
   <br/>
   <a href="https://docs.google.com/spreadsheets/d/1KHNrKrpunvWNaGVStFhj7Ra2EC_kgK8sZQsxa2yiJuk/edit#gid=0">Quelldaten</a>
   <br/>
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSetnR7iT0yikzq435YvM-pKsh_nbZ-55egBEpu2qUu0TIaWOw/viewform">Update vorschlagen</a>
+
+<div id="description">
+  The world.
 </div>
 <pre id="content" style="white-space: pre-wrap;"></pre>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtjfgtWoGNkp5Uc2XQ7kh3Po3wfXY-R4U&callback=listCentres"></script>

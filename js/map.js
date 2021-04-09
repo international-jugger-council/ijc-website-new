@@ -26,7 +26,7 @@ function listCentres() {
     });
 }
 
-function getQueryVariable(variable) {
+function getQueryVariable(variable, default_return='') {
   var query = window.location.search.substring(1);
   var vars = query.split('&');
   for (var i = 0; i < vars.length; i++) {
@@ -35,7 +35,7 @@ function getQueryVariable(variable) {
           return decodeURIComponent(pair[1]);
       }
   }
-  return '';
+  return default_return;
 }
 
 function initMap() {
@@ -88,7 +88,14 @@ function initMap() {
       if (! showYouth) {
         return;
       }
-      image = 'IJC_map_pin_youth.png'
+      image = IMAGE_ROOT + '/IJC_map_pin_youth.png'
+    }
+
+    if (club_data[youth_col] == 'FALSE' && club_data[active_col] == 'TRUE' && club_data[armored_col] == 'FALSE') {
+      if (! showNormal) {
+        return;
+      }
+      image = IMAGE_ROOT + '/IJC_map_pin.png';
     }
 
     // otherwise, make a marker for it
@@ -148,10 +155,11 @@ function initMap() {
       infowindow.open(map, marker);
     });
     num_markers = num_markers + 1;
-    document.getElementById("numMarkers").innerHTML = num_markers;
 
     return marker;
   });
+
+  document.getElementById("numMarkers").innerHTML = num_markers;
 
   // strip out null markers before sending it on to avoid pissing off the clusterer
   markers = markers.filter(function(marker) {
@@ -161,11 +169,14 @@ function initMap() {
   // Add a marker clusterer to manage the markers.
   var markerCluster = new MarkerClusterer(map, markers,
       {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+  describe_map(map, markers, markerCluster);
 }
 
 var showInactive = getQueryVariable('showInactive');
 var showArmored = getQueryVariable('showArmored');
 var showYouth = getQueryVariable('showYouth');
+var showNormal = getQueryVariable('showNormal', default_return=true);
 
 function setShowInactive() {
   showInactive = document.getElementById("showInactive").checked;
@@ -178,4 +189,13 @@ function setShowArmored() {
 function setShowYouth() {
   showYouth = document.getElementById("showYouth").checked;
   initMap();
+}
+function setShowNormal() {
+  showNormal = document.getElementById("showNormal").checked;
+  initMap();
+}
+
+function describe_map(map, markers, markerCluster) {
+  var description_spot = document.getElementById("description");
+  description_spot.innerText = ""
 }
